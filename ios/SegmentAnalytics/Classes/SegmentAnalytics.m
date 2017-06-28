@@ -37,6 +37,10 @@ RCT_EXPORT_METHOD(alias:(NSString*)newId) {
     [[SEGAnalytics sharedAnalytics] alias:newId];
 }
 
+RCT_EXPORT_METHOD(flush) {
+    [[SEGAnalytics sharedAnalytics] flush];
+}
+
 -(NSMutableDictionary*) toStringDictionary: (NSDictionary *)properties {
     NSMutableDictionary *stringDictionary = [[NSMutableDictionary alloc] init];
     for (NSString* key in [properties allKeys]) {

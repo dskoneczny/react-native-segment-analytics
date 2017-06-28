@@ -63,6 +63,11 @@ public class SegmentAnalyticsModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
+    public void flush() {
+        Analytics.with(this.getReactApplicationContext()).flush();
+    }
+
+    @ReactMethod
     public void screen(String screenName, ReadableMap properties) {
         Analytics.with(this.getReactApplicationContext()).screen(
                 null,
